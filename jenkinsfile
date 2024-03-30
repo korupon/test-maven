@@ -6,7 +6,7 @@ stage('Build')
 {
 steps{
 echo "set mvn path  the Code.........."
- sh "maven-path.sh"
+ sh "/var/lib/jenkins/workspace/jenkins-demo/maven-path.sh"
  sh "mvn -version"
  sh "mvn clean"
 }
