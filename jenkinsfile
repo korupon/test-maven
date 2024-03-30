@@ -1,4 +1,3 @@
-/*
 pipeline{
 agent any
 stages 
@@ -42,34 +41,3 @@ ansiblePlaybook credentialsId: 'edf29c56-6626-4ce1-a40e-4d6a98e6afea', disableHo
 }
 }
 }
-*/
-
-node {
-	stage('Checkout code') {
-         git url: 'https://github.com/jilu407/test-maven.git'
-           
-    }
-	stage('Build'){
-		echo "build pass"
-		sh "mvn -version"
-        sh "mvn clean"
-	}
-	stage('test 007'){
-		echo 'test pass'
-		sh "mvn test"
-	}
-	stage('Compile'){
-		echo 'Compile pass'
-		sh "mvn compile"
-	}
-	stage('package'){
-		echo 'Compile pass'
-		sh "mvn package"
-	}
-	stage('Ansible Deploy'){
-		echo "Deploying the Project.........."
-		ansiblePlaybook credentialsId: 'deploy', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'play.yml', sudoUser: null
-		
-	}
-}
-
