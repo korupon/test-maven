@@ -6,9 +6,9 @@ stage('Build')
 {
 steps{
 echo "set mvn path  the Code.........."
- sh '" M2_HOME='/opt/apache-maven-3.6.3'
+ sh " M2_HOME='/opt/apache-maven-3.6.3'
        PATH="$M2_HOME/bin:$PATH"
-       export PATH "'
+       export PATH "
  sh "mvn -version"
  sh "mvn clean"
 }
