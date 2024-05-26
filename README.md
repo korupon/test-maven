@@ -3,3 +3,5 @@
 Simple Maven Project
 hi siva ram
 hhhhhhhhhh
+
+Automating
